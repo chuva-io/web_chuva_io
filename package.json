@@ -1,21 +1,46 @@
 {
-    "name": "web_chuva_io",
-    "version": "1.0.0",
-    "description": "Chuva Website",
-    "author": "Chuva LLC",
-    "main": "index.html",
-    "dependencies": {
-        "bootstrap": "^4.3.1",
-        "font-awesome": "^4.7.0",
-        "jquery": "^3.4.1",
-        "popper.js": "^1.15.0"
-    },
-    "devDependencies": {
-        "lite-server": "^2.3.0",
-        "node-sass": "^4.12.0"
-    },
-    "scripts": {
-        "generate_css": "node-sass -o css/ css/",
-        "develop": "lite-server"
-    }
+  "name": "web_chuva_io",
+  "version": "1.0.0",
+  "description": "Chuva Website",
+  "author": "Chuva LLC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chuva-io/web_chuva_io"
+  },
+  "main": "index.html",
+  "engines": {
+    "node": ">=10.6.0",
+    "npm": ">=6.1.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "express": "^4.17.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "cssmin": "^0.4.3",
+    "htmlmin": "0.0.7",
+    "clean-css": ">=4.1.11",
+    "imagemin-cli": "^5.0.0",
+    "node-sass": "^4.12.0",
+    "uglify-js": "^3.6.0",
+    "usemin-cli": "^0.5.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0",
+    "onchange": "^6.0.0",
+    "parallelshell": "3.0.1"
+  },
+  "scripts": {
+    "develop": "parallelshell 'npm run watch:all' 'lite-server'",
+    "build": "npm run clean && npm i && npm run generate_css && npm run copy_fonts && npm run optimize_images && npm run minimize_source",
+    "start": "node index.js",
+    "generate_css": "./node_modules/.bin/node-sass -o css/ css/",
+    "watch:scss": "onchange 'css/*.scss' -- npm run generate_css",
+    "watch:all": "parallelshell 'npm run watch:scss'",
+    "clean": "rm -rf distribution && rm -rf node_modules",
+    "copy_fonts": "mkdir -p distribution && cp -Ri node_modules/font-awesome/fonts distribution/fonts && cp -Ri fonts/* distribution/fonts",
+    "optimize_images": "mkdir -p distribution && imagemin images/* --out-dir=distribution/images",
+    "minimize_source": "usemin contact.html -d distribution --htmlmin -o distribution/contact.html && usemin community.html -d distribution --htmlmin -o distribution/community.html && usemin index.html -d distribution --htmlmin -o distribution/index.html"
+  }
 }

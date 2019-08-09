@@ -30,7 +30,7 @@ body {
 
 h1 {
   color: $chuva-color-text-primary;
-  font-family: Ubuntu;
+  font-family: Ubuntu-Regular;
   font-size: 32px;
   font-style: normal;
   font-variant: normal;
@@ -41,7 +41,7 @@ h1 {
 
 h2 {
   color: $chuva-color-text-primary;
-  font-family: Ubuntu;
+  font-family: Ubuntu-Regular;
   font-size: 18px;
   font-style: normal;
   font-variant: normal;
@@ -51,7 +51,7 @@ h2 {
 }
 
 h3 {
-  font-family: Ubuntu;
+  font-family: Ubuntu-Regular;
   font-size: 14px;
   font-style: normal;
   font-variant: normal;
@@ -61,7 +61,7 @@ h3 {
 
 p {
   color: $chuva-color-text-body;
-  font-family: Ubuntu;
+  font-family: Ubuntu-Regular;
   font-size: 16px;
   font-style: normal;
   font-variant: normal;
@@ -74,7 +74,7 @@ li {
   color: $chuva-color-text-body;
   list-style-position: inside;
   text-align: left;
-  font-family: Ubuntu;
+  font-family: Ubuntu-Regular;
   font-size: 16px;
   font-style: normal;
   font-variant: normal;
@@ -98,7 +98,7 @@ footer {
 
 .btn {
   color: $chuva-color-action;
-  font-family: Ubuntu;
+  font-family: Ubuntu-Regular;
   font-size: 14px;
   font-style: normal;
   font-variant: normal;
@@ -131,3 +131,60 @@ footer {
     justify-content: center;
   }
 }
+
+@font-face {
+  font-family: "Ubuntu-Bold";
+  src: url("../fonts/Ubuntu-Bold.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu-BoldItalic";
+  src: url("../fonts/Ubuntu-BoldItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu-Italic";
+  src: url("../fonts/Ubuntu-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu-Light";
+  src: url("../fonts/Ubuntu-Light.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu-LightItalic";
+  src: url("../fonts/Ubuntu-LightItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu-Medium";
+  src: url("../fonts/Ubuntu-Medium.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu-MediumItalic";
+  src: url("../fonts/Ubuntu-MediumItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu-Regular";
+  src: url("../fonts/Ubuntu-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
