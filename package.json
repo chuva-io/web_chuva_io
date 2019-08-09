@@ -1,0 +1,19 @@
+{
+    "name": "web_chuva_io",
+    "version": "1.0.0",
+    "description": "Chuva Website",
+    "author": "Chuva LLC",
+    "main": "index.html",
+    "dependencies": {
+        "bootstrap": "^4.3.1",
+        "font-awesome": "^4.7.0",
+        "jquery": "^3.4.1",
+        "popper.js": "^1.15.0"
+    },
+    "devDependencies": {
+        "lite-server": "^2.3.0"
+    },
+    "scripts": {
+        "develop": "lite-server"
+    }
+}
