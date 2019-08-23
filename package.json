@@ -13,14 +13,11 @@
     "npm": ">=6.1.0"
   },
   "dependencies": {
-    "bootstrap": "^4.3.1",
     "clean-css": ">=4.1.11",
     "cssmin": "^0.4.3",
     "express": "^4.17.1",
-    "font-awesome": "^4.7.0",
     "htmlmin": "0.0.7",
     "imagemin-cli": "^5.0.0",
-    "jquery": "^3.4.1",
     "marked": "^0.7.0",
     "node-sass": "^4.12.0",
     "popper.js": "^1.15.0",
@@ -34,7 +31,7 @@
   },
   "scripts": {
     "develop": "npm run generate_css && npm run markdown_to_html && parallelshell 'npm run watch:all' 'lite-server'",
-    "build": "npm run clean && npm i && npm run generate_css && npm run copy_fonts && npm run optimize_images && npm run minimize_source",
+    "build": "npm run clean && npm i && npm run generate_css && npm run optimize_images && npm run minimize_source",
     "start": "node index.js",
     "generate_css": "./node_modules/.bin/node-sass -o css/ css/",
     "watch:scss": "onchange 'css/*.scss' -- npm run generate_css",
@@ -42,8 +39,7 @@
     "watch:md": "onchange 'markdown/*.md' -- npm run markdown_to_html",
     "watch:all": "parallelshell 'npm run watch:scss' 'npm run watch:md'",
     "clean": "rm -rf distribution && rm -rf node_modules",
-    "copy_fonts": "mkdir -p distribution && cp -Ri node_modules/font-awesome/fonts distribution/fonts && cp -Ri fonts/* distribution/fonts",
     "optimize_images": "mkdir -p distribution && imagemin images/* --out-dir=distribution/images",
-    "minimize_source": "usemin contact.html -d distribution --htmlmin -o distribution/contact.html && usemin community.html -d distribution --htmlmin -o distribution/community.html && usemin index.html -d distribution --htmlmin -o distribution/index.html"
+    "minimize_source": "usemin community.html -d distribution --htmlmin -o distribution/community.html && usemin index.html -d distribution --htmlmin -o distribution/index.html"
   }
 }
